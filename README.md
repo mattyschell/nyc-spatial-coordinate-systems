@@ -1,5 +1,5 @@
 # nyc-spatial-coordinate-systems
-NYC Spatial Coordinate Systems Reference
+
 
 ## Quick Reference
 
@@ -23,6 +23,7 @@ From earthy to mappy
 * a decent approximation of the geoid
 * wider at the equator than tall at the poles
 * WGS 84, the most common lat/lon geographic coordinate system, uses a global ellipsoid
+* technically when 2 of 3 ellipsoid axes are equal this is a spheroid.  A spheroid is a type of ellipsoid like a square is a type of rectangle
 
 **local ellipsoid**
 * also known as a reference ellipsoid
@@ -30,7 +31,7 @@ From earthy to mappy
 * we just use the part that is nicely fitted, the other parts are inside the earth or outer space
 
 **datum**
-* based off of ellipsoids with elevation 
+* based off of ellipsoids with elevation. 
 * can be local datums based off of local ellipsoids (ex NAD 83)
 * can be global datums based off of global ellipsoids (ex WGS 84)
 * when expressed as lat/lon these are GEOGRAPHIC COORDINATE SYSTEMS
@@ -40,8 +41,23 @@ From earthy to mappy
 * lambert conformal conic is a common projection for local city and state agencies
 * when expressed as x,y these are PROJECTED COORDINATE SYSTEMS
 
+## North American Datums and Corresponding NYC Projected Coordinate Systems 
 
-## Known Processes and Their Coordinate Reference System Processing
+The positional shifts in these coordinate reference systems can be up to about 3/4 of a meter. It is always best to state precisely which one a dataset uses.
+
+| Name  | EPSG Code | Notes | 
+| ------------- | ------------- | ------------- | 
+| NAD 83 | http://epsg.io/2263 |  |
+| NAD 83 (HARN) | http://epsg.io/2908 | Harn = High Accuracy Reference Network |
+| NAD 83 (CORS) | ? |  |
+| NAD 83 2007 readjustment | http://epsg.io/3628 |  http://www.ngs.noaa.gov/NationalReadjustment/ |
+| NAD 83 2011 readjustment | http://epsg.io/6539 | http://www.ngs.noaa.gov/web/surveys/NA2011/ |
+| NAPGD2022 |  |  |
+
+
+## Known Processes in NYC GIS and Their Coordinate Reference System Processing
 
 ## Helpful References
+
+A blog post describing the NYC coordinate reference system history: https://nycitymap.wordpress.com/2016/09/13/nyc-projected/
 
