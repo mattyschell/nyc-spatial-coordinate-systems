@@ -56,7 +56,14 @@ The positional shifts in these coordinate reference systems can be up to about 3
 | NAPGD2022 |  |  |
 
 
-## Known Processes in NYC GIS and Their Coordinate Reference System Processing
+## NYC GIS Data Transformation Details 
+
+| Dataset | Source Coordinate System | Published | Published Coordinate System | Transformation Used |
+| ------------- | ------------- | ------------- | ------------- | ------------- | 
+| [building footprints](https://github.com/mattyschell/geodatabase-buildings) | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/item.html?id=870bf69e8a8044aea4488e564c0b4010) | [4326](https://epsg.io/4326) |  |
+| CSCL | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [4326](https://epsg.io/4326) | |
+
+
 
 ## Background Reading
 
@@ -65,6 +72,8 @@ The positional shifts in these coordinate reference systems can be up to about 3
 * [datum tutorial](https://vdatum.noaa.gov/docs/datums.html)
 * [historical surveys and systems in NYC](https://web.archive.org/web/20191011125423/https://www.pobonline.com/articles/89732-web-exclusive-the-xs-and-ys-of-the-big-apple)
 * [1914 NYC leveling and benchmarks](https://web.archive.org/web/20191011125423/https://www.pobonline.com/articles/89732-web-exclusive-the-xs-and-ys-of-the-big-apple)
+* [NY Times article on height modernization](https://web.archive.org/web/20191011125423/https://www.pobonline.com/articles/89732-web-exclusive-the-xs-and-ys-of-the-big-apple)
+* [NY Times article on the end of the US Survey foot](https://web.archive.org/web/20200819115447/https://www.nytimes.com/2020/08/18/science/foot-surveying-metrology-dennis.html)
 
 
 
