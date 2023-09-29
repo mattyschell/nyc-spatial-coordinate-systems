@@ -50,7 +50,7 @@ The positional shifts in these coordinate reference systems can be up to about 3
 | ------------- | ------------- | ------------- | 
 | NAD 83 | http://epsg.io/2263 |  |
 | NAD 83 (HARN) | http://epsg.io/2908 | Harn = High Accuracy Reference Network |
-| NAD 83 (CORS) | ? |  |
+| NAD 83 (CORS) | ? | CORS = Continuously Operating Reference Stations |
 | NAD 83 2007 readjustment | http://epsg.io/3628 |  http://www.ngs.noaa.gov/NationalReadjustment/ |
 | NAD 83 2011 readjustment | http://epsg.io/6539 | http://www.ngs.noaa.gov/web/surveys/NA2011/ |
 | NAPGD2022 |  |  |
@@ -60,8 +60,8 @@ The positional shifts in these coordinate reference systems can be up to about 3
 
 | Dataset | Source Coordinate System | Published | Published Coordinate System | Transformation Used |
 | ------------- | ------------- | ------------- | ------------- | ------------- | 
-| [building footprints](https://github.com/mattyschell/geodatabase-buildings) | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/item.html?id=870bf69e8a8044aea4488e564c0b4010) | [4326](https://epsg.io/4326) |  |
-| CSCL | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [4326](https://epsg.io/4326) | |
+| [building footprints](https://github.com/mattyschell/geodatabase-buildings) | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/item.html?id=870bf69e8a8044aea4488e564c0b4010) | [4326](https://epsg.io/4326) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
+| CSCL | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [4326](https://epsg.io/4326) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
 
 
 
@@ -74,6 +74,8 @@ The positional shifts in these coordinate reference systems can be up to about 3
 * [1914 NYC leveling and benchmarks](https://web.archive.org/web/20191011125423/https://www.pobonline.com/articles/89732-web-exclusive-the-xs-and-ys-of-the-big-apple)
 * [NY Times article on height modernization](https://web.archive.org/web/20191011125423/https://www.pobonline.com/articles/89732-web-exclusive-the-xs-and-ys-of-the-big-apple)
 * [NY Times article on the end of the US Survey foot](https://web.archive.org/web/20200819115447/https://www.nytimes.com/2020/08/18/science/foot-surveying-metrology-dennis.html)
-
+* Differences between NAD 83 and WGS 84
+   * [ESRI Summary](https://support.esri.com/en-us/knowledge-base/how-to-determine-which-nad1983towgs1984-transformation-000005929)
+   * [Canadian presentation](http://naref.org/transf/nad83_hydroscan2006.pdf)
 
 
