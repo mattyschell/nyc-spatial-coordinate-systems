@@ -60,8 +60,8 @@ The positional shifts in these coordinate reference systems can be up to about 3
 
 | Dataset | Source Coordinate System | Published | Published Coordinate System | Transformation Used |
 | ------------- | ------------- | ------------- | ------------- | ------------- | 
-| [building footprints](https://github.com/mattyschell/geodatabase-buildings) | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/item.html?id=870bf69e8a8044aea4488e564c0b4010) | [4326](https://epsg.io/4326) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
-| CSCL | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [4326](https://epsg.io/4326) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
+| [building footprints](https://github.com/mattyschell/geodatabase-buildings) | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/item.html?id=870bf69e8a8044aea4488e564c0b4010) | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
+| CSCL | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
 
 
 
