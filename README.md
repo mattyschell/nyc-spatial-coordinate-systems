@@ -22,14 +22,16 @@ From earthy to mappy
 
 **global ellipsoid**
 * a decent approximation of the geoid
+* geocentric: a mathematical model with the earth at the center
 * wider at the equator than tall at the poles
 * WGS 84, the most common lat/lon geographic coordinate system, uses a global ellipsoid
 * technically when 2 of 3 ellipsoid axes are equal this is a spheroid.  A spheroid is a type of ellipsoid like a square is a type of rectangle
+  
 
 **local ellipsoid**
 * also known as a reference ellipsoid
 * an ellipsoid fitted nicely to one section of the earth
-* we just use the part that is nicely fitted, the other parts are inside the earth or outer space
+* can be fixed to tectonic plates and adjusted with the movement of ground control points
 
 **datum**
 * based off of ellipsoids with elevation. 
@@ -62,6 +64,10 @@ The positional shifts in these coordinate reference systems can be up to about 3
 | ------------- | ------------- | ------------- | ------------- | ------------- | 
 | [building footprints](https://github.com/mattyschell/geodatabase-buildings) | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/item.html?id=870bf69e8a8044aea4488e564c0b4010) | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
 | CSCL | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
+| Planimetrics 2012/2014 | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
+| Planimetrics 2012/2014 | [2263](https://epsg.io/2263) | [NYC Open Data](https://opendata.cityofnewyork.us/) | [2263](https://epsg.io/2263)  | None |
+
+
 
 
 
