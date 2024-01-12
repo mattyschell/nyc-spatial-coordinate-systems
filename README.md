@@ -66,7 +66,7 @@ The positional shifts in these coordinate reference systems can be up to about 3
 | CSCL | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
 | [Planimetrics 2012/2014](https://github.com/CityOfNewYork/nyc-planimetrics/blob/master/Capture_Rules.md) | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
 | [Planimetrics 2012/2014](https://github.com/CityOfNewYork/nyc-planimetrics/blob/master/Capture_Rules.md) | [2263](https://epsg.io/2263) | [NYC Open Data](https://opendata.cityofnewyork.us/) | [2263](https://epsg.io/2263)  | None |
-| Planimetrics 2020 | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
+| Planimetrics 2022 | [2263](https://epsg.io/2263) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) WIP | [3857](https://epsg.io/3857) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
 | [NYC Map Tiles](https://maps.nyc.gov/wmts/1.0.0/?REQUEST=getcapabilities) | [2263](https://epsg.io/2263) | maps.nyc.gov | [900913](https://epsg.io/900913) | 2263 <-> WGS84.  No datum transformation |
 
 
