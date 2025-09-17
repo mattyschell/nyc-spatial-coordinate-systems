@@ -70,9 +70,6 @@ The positional shifts in these coordinate reference systems can be up to about 3
 | [NYC Map Tiles](https://maps.nyc.gov/wmts/1.0.0/?REQUEST=getcapabilities) | [2263](https://epsg.io/2263) | maps.nyc.gov | [900913](https://epsg.io/900913) | 2263 <-> WGS84.  No datum transformation |
 
 
-
-
-
 ## Background Reading
 
 * [history of NYC coordinate reference systems](https://nycitymap.wordpress.com/2016/09/13/nyc-projected/)
@@ -87,3 +84,69 @@ The positional shifts in these coordinate reference systems can be up to about 3
    * [Canadian presentation](http://naref.org/transf/nad83_hydroscan2006.pdf)
 
 
+## FAQ
+
+### In PostGIS How Do I Perform A Datum-Shifted Transformation From WGS84 to New York State Plane 
+
+Many people are asking.  
+
+ESRI's ArcGIS Pro and ArcGIS Online perform the shift by default.  Data produced in PostGIS may appear "shifted" by approximately 3 feet using the default ST_Transform.
+
+Here's the world-famous Flatiron Building and 2 of its address points.  Red is the source data displayed in New York State Plane Lambert Conformal Conic. Yellow is WGS84 lon/lat data transformed without a datum shift.
+
+![World Famous Flatiron Building](images/flatiron.png)
+
+Here's the world-famous ArcGIS Pro transformation details. 
+
+![World Famous ArcGIS Pro](images/esri-transformation-details.png)
+
+PostGIS uses the "proj" open source database.  It's stored as SQLLite in a location like this on Windows - C:\Program Files\PostgreSQL\16\share\contrib\postgis-3.5\proj\proj.db
+
+That database includes a table named "helmert_transformation_table."  This table is named after our man [Friedrich Helmert](https://en.wikipedia.org/wiki/Helmert_transformation). The ESRI code 108190 is in there.
+
+```sql
+select
+	auth_name,
+	code,
+	name,
+	source_crs_auth_name,
+	source_crs_code,
+	target_crs_auth_name,
+	target_crs_code
+from
+	helmert_transformation_table
+where
+	code = 108190
+```
+
+| auth_name | code   | name                         | source_crs_auth_name | source_crs_code | target_crs_auth_name | target_crs_code |
+|-----------|--------|------------------------------|-----------------------|------------------|-----------------------|------------------|
+| ESRI      | 108190 | WGS_1984_(ITRF00)_To_NAD_1983 | EPSG                  | 4326             | EPSG                  | 4269             |
+
+To use this in PostGIS you will need a fairly recent version (3.4+)  that includes [ST_TransformPipeline](https://postgis.net/docs/manual-3.4/ST_TransformPipeline.html).
+
+Here is a transformation without the datum shift.
+
+```sql
+select
+	ST_Transform(ST_SETSRID(ST_GeomFromText('POINT(-73.98272 40.74518)')
+                     , 4326)
+                     , 2263)
+```
+
+--> POINT (989038.1655756367 210766.27823605755)
+
+Here it is with the shift. This is the answer to the FAQ.
+
+```
+select
+	ST_Transform(ST_TransformPipeline(  
+    				    ST_SetSRID(ST_MakePoint(-73.98272, 40.74518), 4326)
+       				   , 'urn:ogc:def:coordinateOperation:ESRI::108190'
+       				   , 4269)
+       				   , 2263)
+```
+
+--> POINT (989038.5660188518 210763.2676373856)
+
+These points are approximately 3 feet apart.
