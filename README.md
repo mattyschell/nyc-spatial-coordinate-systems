@@ -86,7 +86,7 @@ The positional shifts in these coordinate reference systems can be up to about 3
 
 ## FAQ
 
-### In PostGIS How Do I Perform A Datum-Shifted Transformation From WGS84 to New York State Plane 
+### In PostGIS how do I perform a datum-shifted transformation from WGS84 to New York state plane? 
 
 Many people are asking.  
 
@@ -129,24 +129,32 @@ Here is a transformation without the datum shift.
 
 ```sql
 select
-	ST_Transform(ST_SETSRID(ST_GeomFromText('POINT(-73.98272 40.74518)')
-                     , 4326)
-                     , 2263)
+	ST_Transform(ST_SETSRID(ST_MakePoint(-73.98272, 40.74518)
+                           ,4326)
+                ,2263);
 ```
 
 --> POINT (989038.1655756367 210766.27823605755)
 
 Here it is with the shift. This is the answer to the FAQ.
 
-```
+```sql
 select
 	ST_Transform(ST_TransformPipeline(  
-    				    ST_SetSRID(ST_MakePoint(-73.98272, 40.74518), 4326)
-       				   , 'urn:ogc:def:coordinateOperation:ESRI::108190'
-       				   , 4269)
-       				   , 2263)
+    				ST_SetSRID(ST_MakePoint(-73.98272, 40.74518), 4326)
+       			   ,'urn:ogc:def:coordinateOperation:ESRI::108190'
+       			   ,4269)
+       		   ,2263);
 ```
 
 --> POINT (989038.5660188518 210763.2676373856)
 
 These points are approximately 3 feet apart.
+
+### How many decimal digits of precision should I use for data in latitude longitude?
+
+Use 7 if you are a normal person doing normal GIS work.
+
+The sixth decimal digit represents the limit of most forms of data collection such as heads up digitizing  or GPS. The sixth digit (0.000001 degrees) is approximately 4 inches at the equator. By including one more digit, the seventh, you ensure that any rounding or other calculations take place in the 7th digit. This keeps the possibly meaningful 6th digit stable.
+
+Internally most geographic information systems store and operate on data using [floating point numbers](https://en.wikipedia.org/wiki/Floating-point_arithmetic). So while it may be helpful to think about limiting you digits on input, display, and across networks, if you are a GIS person doing GIS work on a computer you are not helping yourself by thinking about significant digits.
