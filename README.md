@@ -151,10 +151,21 @@ select
 
 These points are approximately 3 feet apart.
 
+Here's the inverse, going from New York State Plane to WGS84. It's a mirror image of the forward direction!
+
+```sql
+select 
+	ST_InverseTransformPipeline(ST_Transform(
+									ST_SetSRID(ST_MakePoint(989038.5660188518,210763.2676373856),2263)
+								   ,4326)
+								,'urn:ogc:def:coordinateOperation:ESRI::108190'
+								,4269);
+```
+
 ### How many decimal digits of precision should I use for data in latitude longitude?
 
 Use 7 if you are a normal person doing normal GIS work.
 
 The sixth decimal digit represents the limit of most forms of data collection such as heads up digitizing  or GPS. The sixth digit (0.000001 degrees) is approximately 4 inches at the equator. By including one more digit, the seventh, you ensure that any rounding or other calculations take place in the 7th digit. This keeps the possibly meaningful 6th digit stable.
 
-Internally most geographic information systems store and operate on data using [floating point numbers](https://en.wikipedia.org/wiki/Floating-point_arithmetic). So while it may be helpful to think about limiting you digits on input, display, and across networks, if you are a GIS person doing GIS work on a computer you are not helping yourself by thinking about significant digits.
+Internally most geographic information systems store and operate on data using [floating point numbers](https://en.wikipedia.org/wiki/Floating-point_arithmetic). So while it may be helpful to think about limiting your digits on input, display, and across networks, if you are a GIS person doing GIS work on a computer you are not helping yourself by thinking about significant digits.
