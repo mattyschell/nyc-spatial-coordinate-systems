@@ -51,11 +51,11 @@ The positional shifts in these coordinate reference systems can be up to about 3
 | Name  | EPSG Code | Notes | 
 | ------------- | ------------- | ------------- | 
 | NAD 83 | http://epsg.io/2263 |  |
-| NAD 83 (HARN) | http://epsg.io/2908 | Harn = High Accuracy Reference Network |
-| NAD 83 (CORS) | ? | CORS = Continuously Operating Reference Stations |
-| NAD 83 2007 readjustment | http://epsg.io/3628 |  http://www.ngs.noaa.gov/NationalReadjustment/ |
-| NAD 83 2011 readjustment | http://epsg.io/6539 | http://www.ngs.noaa.gov/web/surveys/NA2011/ |
-| NAPGD2022 |  |  |
+| NAD 83 (HARN) | http://epsg.io/2908 | HARN = High Accuracy Reference Network |
+| NAD 83 (CORS) | https://epsg.io/103499 | CORS = Continuously Operating Reference Stations |
+| NAD 83 2007 realization | http://epsg.io/3628 |  http://www.ngs.noaa.gov/NationalReadjustment/ |
+| NAD 83 2011 realization | http://epsg.io/6539 | http://www.ngs.noaa.gov/web/surveys/NA2011/ |
+| NAPGD 2022 | 361004 | (not yet released) National Geopotential Datum |
 
 
 ## NYC GIS Data Transformation Details 
