@@ -88,7 +88,7 @@ The positional shifts in these coordinate reference systems can be up to about 3
 
 ### In PostGIS how do I perform a datum-shifted transformation from WGS84 to New York state plane? 
 
-Many people are asking.  
+A: Many people are asking.  
 
 ESRI's ArcGIS Pro and ArcGIS Online perform the shift by default.  Data produced in PostGIS may appear "shifted" by approximately 3 feet using the default ST_Transform.
 
@@ -164,8 +164,13 @@ select
 
 ### How many decimal digits of precision should I use for data in latitude longitude?
 
-Use 7 if you are a normal person doing normal GIS work.
+A: Use 7 if you are a normal person doing normal GIS work.
 
 The sixth decimal digit represents the limit of most forms of data collection such as heads up digitizing  or GPS. The sixth digit (0.000001 degrees) is approximately 4 inches at the equator. By including one more digit, the seventh, you ensure that any rounding or other calculations take place in the 7th digit. This keeps the possibly meaningful 6th digit stable.
 
 Internally most geographic information systems store and operate on data using [floating point numbers](https://en.wikipedia.org/wiki/Floating-point_arithmetic). So while it may be helpful to think about limiting your digits on input, display, and across networks, if you are a GIS person doing GIS work on a computer you are not helping yourself by thinking about significant digits.
+
+### If I have important, accurate data in New York State Plane (underlying NAD 83) is it ever OK to present, store, or transform via WGS84 or Web Mercator?
+
+A: No
+
