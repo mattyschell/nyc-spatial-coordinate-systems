@@ -174,3 +174,29 @@ Internally most geographic information systems store and operate on data using [
 
 A: No
 
+### How much difference is there between all of these NYC coordinate systems?
+
+Here's the tip of the ["prow"](https://en.wikipedia.org/wiki/Flatiron_Building#Base) of the world famous Flatiron Building. The source data is stored in spatial reference [2263](http://epsg.io/2263) which uses the original North American Datum of 1983.  
+
+The point at the tip of the prow is labeled "NAD 83."
+
+![prow zoomed out](images/prow-zoomed-out.png)
+
+We can project this point to different realizations of NAD 83. We can also project to the World Geodetic System of 1984, commonly used in GPS and web maps.  These points are labeled with selected distances displayed.
+
+Zoomed in a little from the previous image:
+
+![prow zoomed in 1](images/prow-zoomed-in-1.png)
+
+Zoomed in more to show all of the NAD 83 realizations.
+
+![prow zoomed in 2](images/prow-zoomed-in-2.png)
+
+If you use ArcGIS Pro the trick to visualize these distances is to disable automatic transformations between coordinate systems.
+
+![do not transform](images/do-not-transform.png)
+
+
+
+
+
