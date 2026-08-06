@@ -1,48 +1,46 @@
 # nyc-spatial-coordinate-systems
 
-
 ## Quick Reference
 
 | EPSG Code  | Description | ESRI Software | Lower Left X | Lower Left Y | Upper Right X | Upper Right Y | 
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [2263](https://spatialreference.org/ref/epsg/2263/)  | New York State Plane Lambert Conformal Conic  | NAD 1983 StatePlane New York Long Isl FIPS 3104 (US Feet) | 900000 | 110000 | 1090000 | 295000 |
-| [6539](https://spatialreference.org/ref/epsg/6539/)  | (NAD 2011) New York State Plane Lambert Conformal Conic | NAD 1983 (2011) StatePlane New York Long Isl FIPS 3104 (US Feet) | 900000 | 110000 | 1090000 | 295000 |
-| [4326](https://spatialreference.org/ref/epsg/4326/) | WGS84 World Geographic Coordinate System | WGS 1984 | -74.3027914 | 40.4681991 | -73.61703247 | 40.97574288 |
-| [4269](https://spatialreference.org/ref/epsg/4269/) | NAD 83 Local Datum | NAD 1983 | -74.3027914 | 40.4681991 | -73.61703247 | 40.97574288 |
 | [3857](https://spatialreference.org/ref/epsg/3857/) | Web Mercator | WGS 1984 Web Mercator (auxiliary sphere) | -8271348.9 | 4934214.8 | -8195010.6 | 5008764.4 |
+| [4326](https://spatialreference.org/ref/epsg/4326/) | WGS84 World Geodetic Coordinate System | WGS 1984 | -74.3027914 | 40.4681991 | -73.61703247 | 40.97574288 |
+| [6539](https://spatialreference.org/ref/epsg/6539/)  | (NAD 2011) New York State Plane Lambert Conformal Conic | NAD 1983 (2011) StatePlane New York Long Isl FIPS 3104 (US Feet) | 900000 | 110000 | 1090000 | 295000 |
+
 
 ## Glossary 
 
 From earthy to mappy
 
-**geoid**
-* a lumpy earth model that is equal gravity global mean sea level 
-* it is lumpy because of gravitational variations
-* different stuff under our feet (mountains, dinosaur bones) changes gravity 
+### Geoid
+* A lumpy earth model that is equal gravity global mean sea level. 
+* It is lumpy because of gravitational variations.
+* Different stuff under our feet (mountains, dinosaur bones) changes gravity and its direction.  
 
-**global ellipsoid**
-* a decent approximation of the geoid
-* geocentric: a mathematical model with the earth at the center
-* wider at the equator than tall at the poles
-* WGS 84, the most common lat/lon geographic coordinate system, uses a global ellipsoid
-* technically when 2 of 3 ellipsoid axes are equal this is a spheroid.  A spheroid is a type of ellipsoid like a square is a type of rectangle
+### Global Ellipsoid
+* A decent approximation of the geoid.
+* It is geocentric - a mathematical model with the earth at the center
+* Wider at the equator than vertically to the poles
+* WGS 84, the most common latitude/longitude geographic coordinate system, uses a global ellipsoid.
+* Technically the global ellipsoid is a spheroid. When 2 of 3 ellipsoid axes are equal this is a spheroid.  A spheroid is a type of ellipsoid like a square is a type of rectangle.
   
+### Local Ellipsoid
+* Also known as a reference ellipsoid.
+* An ellipsoid fitted nicely to one section of the earth.
+* Can be fixed to tectonic plates and adjusted with the movement of ground control points.
 
-**local ellipsoid**
-* also known as a reference ellipsoid
-* an ellipsoid fitted nicely to one section of the earth
-* can be fixed to tectonic plates and adjusted with the movement of ground control points
+### Datum
+* Based off of an ellipsoid with elevation. 
+* Local datums are based on local ellipsoids. NAD 83 is a local datum based on a local ellipsoid.
+* Global datums are based on global ellipsoids. WGS 84 is a global datum based on a global ellipsoid.
+* When expressed as latitude/longitude these are GEOGRAPHIC COORDINATE SYSTEMS
 
-**datum**
-* based off of ellipsoids with elevation. 
-* can be local datums based off of local ellipsoids (ex NAD 83)
-* can be global datums based off of global ellipsoids (ex WGS 84)
-* when expressed as lat/lon these are GEOGRAPHIC COORDINATE SYSTEMS
-
-**projections**
-* flattening of datums onto flat surfaces like screens and maps
-* lambert conformal conic is a common projection for local city and state agencies
-* when expressed as x,y these are PROJECTED COORDINATE SYSTEMS
+### Projection
+* Flattening of datums onto flat surfaces like screens and maps
+* Lambert Conformal Conic is a common projection used by cities and states
+* When expressed as x/y coordinates these are PROJECTED COORDINATE SYSTEMS
 
 ## North American Datums and Corresponding NYC Projected Coordinate Systems 
 
@@ -50,12 +48,12 @@ The positional shifts in these coordinate reference systems can be up to about 3
 
 | Name  | Spatial Reference ID | Notes | 
 | ------------- | ------------- | ------------- | 
-| NAD 83 | https://spatialreference.org/ref/epsg/2263/ |  |
-| NAD 83 (HARN) | https://spatialreference.org/ref/epsg/2908/ | HARN = High Accuracy Reference Network |
-| NAD 83 (CORS) | https://spatialreference.org/ref/esri/103499/ | CORS = Continuously Operating Reference Stations |
-| NAD 83 2007 realization | https://spatialreference.org/ref/epsg/3628/ |  http://www.ngs.noaa.gov/NationalReadjustment/ |
-| NAD 83 2011 realization | https://spatialreference.org/ref/epsg/6539/ | http://www.ngs.noaa.gov/web/surveys/NA2011/ |
-| NAPGD 2022 | 361004 | (not yet released) National Geopotential Datum |
+| NAD 83 / New York Long Island | https://spatialreference.org/ref/epsg/2263/ | NAD 83 was released in 1986 so sometimes referred to as NAD 83 (86) |
+| NAD83 (HARN) / New York Long Island | https://spatialreference.org/ref/epsg/2908/ | HARN = High Accuracy Reference Network |
+| NAD 83 (CORS) New York Long Island | https://spatialreference.org/ref/esri/103499/ | CORS = Continuously Operating Reference Stations |
+| NAD83 (NSRS2007) / New York Long Island | https://spatialreference.org/ref/epsg/3628/ |  http://www.ngs.noaa.gov/NationalReadjustment/ |
+| NAD83 (2011) / New York Long Island | https://spatialreference.org/ref/epsg/6539/ | http://www.ngs.noaa.gov/web/surveys/NA2011/ |
+| New York Long Island State Plane Coordinate System of 2022 | 361004 | To be released in 2027. A [Hotine Oblique](https://en.wikipedia.org/wiki/Oblique_Mercator_projection#Hotine_oblique_Mercator_projection) projection based on the North American Terrestrial Reference Frame of 2022 |
 
 
 ## NYC GIS Data Transformation Details 
@@ -67,7 +65,7 @@ The positional shifts in these coordinate reference systems can be up to about 3
 | [Planimetrics 2012/2014](https://github.com/CityOfNewYork/nyc-planimetrics/tree/planimetrics-2014) | [2263](https://spatialreference.org/ref/epsg/2263/) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [3857](https://spatialreference.org/ref/epsg/3857/) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
 | [Planimetrics 2012/2014](https://github.com/CityOfNewYork/nyc-planimetrics/tree/planimetrics-2014) | [2263](https://spatialreference.org/ref/epsg/2263/) | [NYC Open Data](https://opendata.cityofnewyork.us/) | [2263](https://spatialreference.org/ref/epsg/2263/)  | None |
 | [Planimetrics 2022](https://github.com/CityOfNewYork/nyc-planimetrics/blob/main/Capture_Rules.md) | [2263](https://spatialreference.org/ref/epsg/2263/) | [ArcGIS Online](https://nyc.maps.arcgis.com/home/index.html) | [3857](https://spatialreference.org/ref/epsg/3857/) | NAD 83 <-> WGS 1984 (ITRF00) to NAD 83 <-> WGS 1984 |
-| [NYC Map Tiles](https://maps.nyc.gov/wmts/1.0.0/?REQUEST=getcapabilities) | [2263](https://spatialreference.org/ref/epsg/2263/) | maps.nyc.gov | [900913](https://spatialreference.org/ref/epsg/900913/) | 2263 <-> WGS84.  No datum transformation |
+| [NYC Map Tiles](https://api-portal.nyc.gov/api-details#api=geoserver-tile-services-api&operation=tmsGetTileMetadata) | [2263](https://spatialreference.org/ref/epsg/2263/) | maps.nyc.gov | [900913](https://spatialreference.org/ref/epsg/900913/) | 2263 <-> WGS84.  No datum transformation |
 
 
 ## Background Reading
@@ -82,6 +80,10 @@ The positional shifts in these coordinate reference systems can be up to about 3
 * Differences between NAD 83 and WGS 84
    * [ESRI Summary](https://support.esri.com/en-us/knowledge-base/how-to-determine-which-nad1983towgs1984-transformation-000005929)
    * [Canadian presentation](http://naref.org/transf/nad83_hydroscan2006.pdf)
+* Preparing for the NSRS of 2022
+	* [National Geodetic Survey](https://www.ngs.noaa.gov/datums/newdatums/GetPrepared.shtml)
+	* [ESRI](https://www.esri.com/arcgis-blog/products/arcgis-pro/data-management/prepare-your-data-for-the-nsrs-2022)
+	* [Zone map](https://experience.arcgis.com/experience/dddb7bc0be6f4e56a1c370c8d529d1a0)
 
 
 ## FAQ
@@ -196,6 +198,25 @@ If you use ArcGIS Pro the trick to visualize these distances is to disable autom
 
 ![do not transform](images/do-not-transform.png)
 
+### What is the correct way to bring NAD 83 data up to the present realization?
+
+"The correct way to convert data in historic U.S. datums is to transform them through all in-between NAD83 datums." ([source](https://www.esri.com/arcgis-blog/products/arcgis-pro/data-management/prepare-your-data-for-the-nsrs-2022)) For New York State Plane:
+
+1. https://spatialreference.org/ref/epsg/2263/
+2. https://spatialreference.org/ref/epsg/2908/
+3. https://spatialreference.org/ref/epsg/3628/ 
+4. https://spatialreference.org/ref/epsg/6539/
+
+
+### Can ArcGIS Pro Transform NAD83 data on the fly?
+
+Not exactly.  The ArcGIS Pro transformation dropdown returns paths with a maximum of two hops.  Here for example are the available transformations for data in 2263 (NAD 83) transformed on the fly to a map in 6539 (NAD 83 2011)
+
+![arcgis pro on the fly](images/arcgispro-on-the-fly.png)
+
+Anything that goes through WGS 84 is a bad idea. See the pictures in the FAQ above. Ideally the data itself would be reprojected (see the previous FAQ). The ArcGIS Pro project tool allows you to chain a series geographic transformations in a single run of the tool. 
+
+But if forced to choose on the fly perhaps "NAD 83 to NAD 1983 HARN 47 + NAD 1983 HARN to NAD 1983 2011"? That's the answer to the FAQ?
 
 
 
