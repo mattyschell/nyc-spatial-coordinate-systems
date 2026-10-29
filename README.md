@@ -5,9 +5,14 @@
 | EPSG Code  | Description | ESRI Software | Lower Left X | Lower Left Y | Upper Right X | Upper Right Y | 
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [2263](https://spatialreference.org/ref/epsg/2263/)  | New York State Plane Lambert Conformal Conic  | NAD 1983 StatePlane New York Long Isl FIPS 3104 (US Feet) | 900000 | 110000 | 1090000 | 295000 |
-| [3857](https://spatialreference.org/ref/epsg/3857/) | Web Mercator | WGS 1984 Web Mercator (auxiliary sphere) | -8271348.9 | 4934214.8 | -8195010.6 | 5008764.4 |
-| [4326](https://spatialreference.org/ref/epsg/4326/) | WGS84 World Geodetic Coordinate System | WGS 1984 | -74.3027914 | 40.4681991 | -73.61703247 | 40.97574288 |
+| [3857](https://spatialreference.org/ref/epsg/3857/) | Web Mercator | WGS 1984 Web Mercator (auxiliary sphere) | -8271349.1 | 4934216.0 | -8195010.7 | 5008765.6 |
+| [4326](https://spatialreference.org/ref/epsg/4326/) | WGS84 World Geodetic Coordinate System | WGS 1984 | -74.3027929 | 40.4682073 | -73.6170338 | 40.9757512 |
 | [6539](https://spatialreference.org/ref/epsg/6539/)  | (NAD 2011) New York State Plane Lambert Conformal Conic | NAD 1983 (2011) StatePlane New York Long Isl FIPS 3104 (US Feet) | 900000 | 110000 | 1090000 | 295000 |
+
+There is no single universally accepted extent for New York City. The extent listed above and shaded gray in the image below is just a convention used by some city agencies when working with spatial data.
+
+![Map showing the extent of New York City](images/extent.png)
+
 
 
 ## Glossary 
